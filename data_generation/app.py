@@ -1,6 +1,5 @@
 import json
 from flask import Flask, request, jsonify
-
 from data_generation.services.generation import generate_synthetic_data
 from data_generation.models.models import DataGenerationPayload
 
