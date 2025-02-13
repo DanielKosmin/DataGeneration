@@ -3,9 +3,10 @@ import json
 
 
 def generate_synthetic_data(num_json_objects: int, list_key: str) -> str:
-    records = [GenerationRequest() for _ in range(num_json_objects)]
-    records_objs = [obj.to_obj() for obj in records]
-    return json.dumps({list_key: records_objs}, indent=2)
+    return json.dumps(
+        {list_key: [GenerationRequest().to_obj() for _ in range(num_json_objects)]},
+        indent=2,
+    )
 
 
 if __name__ == "__main__":

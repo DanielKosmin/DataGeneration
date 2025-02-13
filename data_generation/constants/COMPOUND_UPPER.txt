@@ -1,0 +1,4 @@
+incline smith
+flat smith
+incline dumbbell
+machine press
