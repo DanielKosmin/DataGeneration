@@ -33,3 +33,23 @@ class GenerationRequest:
             "reps": self.reps,
             "created_at": self.created_at
         }
+
+
+@dataclass
+class DataGenerationPayload:
+    number_test_records: int
+    payload_key: str
+
+    def __post_init__(self):
+        self.errors = []
+        if not isinstance(self.number_test_records, int):
+            self.errors.append(f"number_test_records must be an integer, got {type(self.number_test_records).__name__}")
+            raise ValueError(self.errors)
+        if self.number_test_records < 1:
+            self.errors.append("number_test_records must be greater than or equal to 1")
+
+        if not isinstance(self.payload_key, str):
+            self.errors.append(f"payload_key must be a string, got {type(self.payload_key).__name__}")
+
+        if self.errors:
+            raise ValueError(self.errors)

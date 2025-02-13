@@ -1,0 +1,7 @@
+POST localhost:5000/data_generation/v1/generate
+Content-Type: application/json
+
+{
+  "number_test_records": 100,
+  "payload_key": "inputRecords"
+}

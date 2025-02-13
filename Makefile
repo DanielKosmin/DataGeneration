@@ -14,3 +14,7 @@ deps: ## Download deps for venv
 clean: ## Remove temp files
 	@rm -rf .venv poetry.lock
 
+.PHONY: test
+test: ## Run tests
+	@pytest
+
