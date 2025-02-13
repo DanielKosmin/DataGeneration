@@ -9,4 +9,4 @@ def generate_synthetic_data(num_json_objects: int, list_key: str) -> str:
 
 
 if __name__ == "__main__":
-    print(generate_synthetic_data(100, 'inputRecords'))
+    print(generate_synthetic_data(100, "inputRecords"))

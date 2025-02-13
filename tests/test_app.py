@@ -9,9 +9,6 @@ class TestDataGeneration:
             yield client
 
     def test_valid_payload(self, client):
-        payload = {
-            "number_test_records": 100,
-            "payload_key": "inputRecords"
-        }
-        response = client.post('/data_generation/v1/generate', json=payload)
+        payload = {"number_test_records": 100, "payload_key": "inputRecords"}
+        response = client.post("/data_generation/v1/generate", json=payload)
         assert response.status_code == 201

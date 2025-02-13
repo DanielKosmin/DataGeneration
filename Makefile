@@ -9,10 +9,15 @@ help: ## Display this help
 .PHONY: deps
 deps: ## Download deps for venv
 	@poetry install
+	@poetry run pre-commit install
 
 .PHONY: clean
 clean: ## Remove temp files
 	@rm -rf .venv poetry.lock
+
+.PHONY: format
+format: ## Format Project
+	@poetry run black .
 
 .PHONY: test
 test: ## Run tests
